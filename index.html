@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a1020" />
+  <meta name="description" content="Kelsca Finance — tesouraria familiar, planejamento de dívidas, cofrinhos, metas e investimentos." />
+  <title>Kelsca Financial 5.0 · Seu dinheiro, sua estratégia</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="Kelsca Finance início"><span class="brand-symbol">K<span class="brand-dot">.</span></span><span><strong>KELSCA</strong><small>FINANCE</small></span></a>
+      <div class="sidebar-caption">SEU ESPAÇO</div>
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <button class="nav-link active" data-page="overview" title="Veja as projeções, gráficos e três sugestões inteligentes"><span>◫</span> Visão geral</button>
+        <button class="nav-link" data-page="income" title="Edite salário, aluguéis, 13º, férias e dividendos"><span>↗</span> Fontes de renda</button>
+        <button class="nav-link" data-page="planner" title="Preencha os próximos 12 meses e veja todas as previsões mudarem"><span>▦</span> Planejar 12 meses</button>
+        <button class="nav-link" data-page="agenda" title="Datas de recebimentos, vencimentos e saldo dia a dia"><span>◷</span> Agenda financeira</button>
+        <button class="nav-link" data-page="bills" title="Semáforo das contas fixas, vencimentos e lembretes"><span>🚦</span> Contas e alertas</button>
+        <button class="nav-link" data-page="forecast" title="Quanto vai sobrar ou faltar em D+30, D+60 e D+90"><span>▥</span> Fluxo D+30/60/90</button>
+        <button class="nav-link" data-page="cashflow" title="Cadastre e confirme entradas e despesas"><span>⇅</span> Entradas e saídas</button>
+        <button class="nav-link" data-page="debts" title="Edite parcelas, simule quitações e veja o alívio nos meses seguintes"><span>▣</span> Dívidas e estratégia</button>
+        <button class="nav-link" data-page="treasury" title="Informe seu saldo e reordene para onde vai o dinheiro que sobrar"><span>◈</span> Tesouraria e prioridades</button>
+        <button class="nav-link" data-page="goals" title="Metas para casa, família e reserva de emergência"><span>◎</span> Metas e sonhos</button>
+        <button class="nav-link" data-page="piggy" title="Simule rendimento hipotético nos Cofrinhos"><span>◉</span> Cofrinhos</button>
+        <button class="nav-link" data-page="investments" title="Cadastre ativos e estime proventos"><span>⌁</span> Investimentos</button>
+        <button class="nav-link" data-page="journey" title="Linha do tempo, medalhas, troféus e honras pelos avanços reais"><span>🏆</span> Minha jornada</button>
+        <button class="nav-link" data-page="history" title="Histórico manual ou importado"><span>▤</span> Histórico</button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-help"><span class="help-spark">✦</span><strong>Finanças com direção.</strong><p>Organize o hoje para construir seu amanhã.</p><button id="setupSidebar" class="small-text-link">Configurar meu caixa ↗</button></div>
+      <div class="sidebar-footer"><span class="live-dot"></span> Seus dados ficam no seu navegador</div>
+    </aside>
+    <div class="main-area">
+      <header class="topbar">
+        <div class="top-left"><button class="mobile-menu icon-button" id="toggleMenu" aria-label="Abrir menu">☰</button><div class="breadcrumb">Meu patrimônio <span>/</span> <strong id="breadcrumbPage">Visão geral</strong></div></div>
+        <div class="top-actions"><button type="button" id="privacyToggle" class="secondary small privacy-toggle" aria-pressed="false" aria-label="Ocultar valores financeiros" title="Ocultar valores financeiros"><span aria-hidden="true">◉</span> Ocultar valores</button><span class="demo-pill" id="modePill">DEMONSTRAÇÃO</span><label class="month-picker-label" for="monthPicker" title="Escolha o primeiro mês da previsão de 12 meses">Mês <input id="monthPicker" type="month" /></label><button class="secondary small" id="importTop" title="Backup, exportação e configurações">Backup</button><button class="avatar" id="settingsTop" title="Configurações">KF</button></div>
+      </header>
+      <main id="view" tabindex="-1"></main>
+    </div>
+  </div>
+  <div id="modalBackdrop" class="modal-backdrop hidden" role="presentation"><div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Editar informações"></div></div>
+  <div class="toast-stack" id="toasts" role="status" aria-live="polite"></div>
+  <input id="importFile" type="file" accept=".json,application/json" hidden />
+  <script src="./app.js"></script>
+</body>
+</html>
